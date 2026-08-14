@@ -1,0 +1,49 @@
+{
+  "builder_name": "generator",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "generator",
+  "dataset_size": 226387240,
+  "description": "",
+  "download_size": 0,
+  "features": {
+    "traj_id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "step_num": {
+      "dtype": "int32",
+      "_type": "Value"
+    },
+    "prompt": {
+      "feature": {
+        "role": {
+          "dtype": "string",
+          "_type": "Value"
+        },
+        "content": {
+          "dtype": "string",
+          "_type": "Value"
+        }
+      },
+      "_type": "List"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 226387240,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 226387240,
+      "num_examples": 7776,
+      "dataset_name": "generator"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

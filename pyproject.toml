@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "context-scythe"
+version = "0.1.0"
+description = "RL training infrastructure for web agents"
+authors = [{ name = "Context Scythe contributors" }]
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.12"
+dependencies = [
+    "context-scythe-core==0.1.0",
+    "context-scythe-env-server==0.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/agentic-foundation-modeling-research/context-scythe"
+Documentation = "https://github.com/agentic-foundation-modeling-research/context-scythe/tree/main/docs"
+Repository = "https://github.com/agentic-foundation-modeling-research/context-scythe"
+Issues = "https://github.com/agentic-foundation-modeling-research/context-scythe/issues"
+
+[project.optional-dependencies]
+dev = [
+    "context-scythe-core[dev]==0.1.0",
+    "context-scythe-env-server[dev]==0.1.0",
+]
+
+[tool.setuptools]
+packages = []
+
+[tool.uv]
+default-groups = []
+
+[tool.uv.workspace]
+members = [
+    "packages/core",
+    "packages/env_server",
+]
+
+[tool.uv.sources]
+context-scythe-core = { workspace = true }
+context-scythe-env-server = { workspace = true }

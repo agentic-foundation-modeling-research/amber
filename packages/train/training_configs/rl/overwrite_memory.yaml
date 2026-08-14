@@ -1,0 +1,64 @@
+# Full rollout entrypoint used by Miles training.
+rollout_function_path: generate_webarena.generate_rollout
+
+# Custom WebArena generate function called by Miles generate_and_rm.
+custom_generate_function_path: generate_webarena.generate
+
+# Custom reward model called after WebArena generation.
+custom_rm_path: generate_webarena.reward_model
+
+# Reward post-process hook used by Miles after custom RM output.
+custom_reward_post_process_path: generate_webarena.postprocess_reward
+
+# Base URL for the running context_scythe env_server.
+webarena_env_server_url: <URL>
+
+# WebArena VM hosts available to the rollout VM pool. The single-host
+# generate() and generate_and_rm_group() live runners use the first entry as
+# website_host when no CLI override is provided.
+webarena_vms: [<IP1>, <IP2>, <IP3>, <IP4>]
+
+# Port for the rollout setup server that resets/tears down mutable task sites.
+webarena_setup_server_port: 7565
+
+# Port for the WebArena homepage service.
+webarena_homepage_port: 7564
+
+# Port for the calculator service.
+webarena_calculator_port: 7564
+
+# Static map service port.
+webarena_map_port: 443
+
+# Static Wikipedia service port.
+webarena_wikipedia_port: 444
+
+# Mutable task site port bases. The mutable sites come from each task config's
+# `sites` list, and each selected site gets its own base. WebArena tasks use at
+# most two mutable sites, so these two bases are assigned in task-site order.
+# With bases [8081, 9081] and stride 1, sample 0 uses 8081/9081, sample 1 uses
+# 8082/9082, and so on.
+webarena_port_bases:
+  - 8081
+  - 9081
+
+# Port-base offset between parallel WebArena samples. Use 1 with the two
+# per-site port bases because WebArena tasks have at most two mutable sites.
+webarena_site_port_stride: 1
+
+# Maximum number of browser-agent steps. Start with 1 for smoke tests; increase
+# only after the env server, WebArena setup, and SGLang are stable.
+webarena_max_steps: 20
+
+# Seconds to wait for each env_server HTTP request before failing.
+webarena_env_timeout_s: 90
+
+# Print decoded WebArena loss-mask spans for action output, inserted
+# compression prompt, and memory output.
+webarena_debug_loss_mask: false
+
+webarena_filter_viewport: true
+webarena_use_tabs_info: true
+webarena_axtree_max_tokens: null
+
+webarena_memory_format: overwrite

@@ -1,0 +1,28 @@
+# Training config for the reasoning-only SFT run (WebAgentR1 baseline).
+# Dataset: webarena_reasoning_only_sft
+# Script:  scripts/run_webarena_qwen3.5-9b-sft.sh
+#
+# Keys use Miles argument names (argparse dest names, underscores not dashes).
+
+# Rollout function that builds the training batches. Behavior cloning: single
+# action turn, no memory turn.
+rollout_function_path: sft_generate.generate_bc
+
+# Number of passes over the SFT dataset.
+num_epoch: 1
+
+# Prompts per rollout step.
+rollout_batch_size: 128
+
+# Samples per optimizer step.
+global_batch_size: 128
+
+# Token budget per GPU for dynamic batching.
+max_tokens_per_gpu: 4096
+
+# Save a checkpoint every N rollout steps.
+save_interval: 100
+
+# Peak learning rate. Note: YAML needs the dot in the mantissa (1.0e-5, not
+# 1e-5) or the value parses as a string.
+lr: 1.0e-5
