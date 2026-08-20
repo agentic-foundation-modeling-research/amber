@@ -21,7 +21,7 @@ per-rollout flow that uses these services, see
 Run on the `Websites VM`:
 
 ```sh
-cd ~/context-scythe
+cd ~/amber
 bash environment_setup/webarena/rollout_env/start_rollout_servers.sh
 ```
 
@@ -52,7 +52,7 @@ Expected response:
 Run on the `Websites VM`:
 
 ```sh
-cd ~/context-scythe
+cd ~/amber
 bash environment_setup/webarena/rollout_env/stop_rollout_servers.sh
 ```
 
@@ -61,8 +61,8 @@ bash environment_setup/webarena/rollout_env/stop_rollout_servers.sh
 On the `Websites VM`:
 
 ```text
-~/context-scythe/environment_setup/webarena/rollout_env/setup_server.log
-~/context-scythe/environment_setup/webarena/rollout_env/homepage.log
+~/amber/environment_setup/webarena/rollout_env/setup_server.log
+~/amber/environment_setup/webarena/rollout_env/homepage.log
 ```
 
 ## Start env_server
@@ -70,12 +70,12 @@ On the `Websites VM`:
 Run on the `env_server VM`:
 
 ```sh
-cd ~/context-scythe
+cd ~/amber
 bash environment_setup/environment_server/manage-env-server.sh start
 ```
 
 The management script loads `OPENAI_BASE_URL` and `OPENAI_API_KEY` from
-`~/context-scythe/.env` by default before starting FastAPI and Ray. To use a
+`~/amber/.env` by default before starting FastAPI and Ray. To use a
 different secrets file, set `ENV_SERVER_ENV_FILE`:
 
 Ray is part of the service startup because env_server uses one Ray actor per
@@ -112,7 +112,7 @@ Expected response:
 Run on the `env_server VM`:
 
 ```sh
-cd ~/context-scythe
+cd ~/amber
 bash environment_setup/environment_server/manage-env-server.sh stop
 ```
 
@@ -121,7 +121,7 @@ bash environment_setup/environment_server/manage-env-server.sh stop
 On the `env_server VM`:
 
 ```text
-~/context-scythe/environment_setup/environment_server/env_server.log
+~/amber/environment_setup/environment_server/env_server.log
 ```
 
 ## Direct env_server Startup
@@ -136,7 +136,7 @@ ROLLOUT_SERVER_MAX_SESSIONS=64 \
 ROLLOUT_SERVER_IDLE_TIMEOUT_S=1800 \
 OPENAI_BASE_URL=https://proxy.example/v1 \
 OPENAI_API_KEY=... \
-context-scythe-env-server
+amber-env-server
 ```
 
 ## Next Reading

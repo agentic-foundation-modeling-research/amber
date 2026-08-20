@@ -42,7 +42,7 @@ runner-side Miles semaphore is still `1`.
 Run these commands from the repository root:
 
 ```bash
-cd context-scythe
+cd amber
 ```
 
 These instructions assume the `context_scythe` core package and `miles` are

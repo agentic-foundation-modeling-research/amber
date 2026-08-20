@@ -68,7 +68,7 @@ def create_app(
             logger.info("env_server_started_with_injected_manager")
         yield
 
-    fastapi_app = FastAPI(title="Context Scythe Rollout Server", lifespan=lifespan)
+    fastapi_app = FastAPI(title="Amber Rollout Server", lifespan=lifespan)
     _register_exception_handlers(fastapi_app)
     _register_routes(fastapi_app)
     return fastapi_app
@@ -90,7 +90,7 @@ def main() -> None:
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Run the Context Scythe rollout server.")
+    parser = argparse.ArgumentParser(description="Run the Amber rollout server.")
     parser.add_argument(
         "--host",
         default=os.getenv("ROLLOUT_SERVER_HOST", "0.0.0.0"),

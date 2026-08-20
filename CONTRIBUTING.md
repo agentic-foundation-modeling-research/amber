@@ -1,4 +1,4 @@
-# Contributing to Context Scythe
+# Contributing to Amber
 
 Thank you for your interest in contributing.
 
@@ -11,7 +11,7 @@ Thank you for your interest in contributing.
 
 ## Development setup
 
-Context Scythe requires Python 3.12 and uses [uv](https://docs.astral.sh/uv/).
+Amber requires Python 3.12 and uses [uv](https://docs.astral.sh/uv/).
 
 ```sh
 uv sync --all-packages --extra dev

@@ -24,8 +24,8 @@ fi
 : "${GCP_ZONE:=us-central1-f}"
 : "${GCP_USE_IAP:=true}"
 
-DEST_DIR="context-scythe"
-DISPLAY_DEST_DIR="~/context-scythe"
+DEST_DIR="amber"
+DISPLAY_DEST_DIR="~/amber"
 
 usage() {
     echo "Usage: $0 <vm-instance-name>"
@@ -93,7 +93,7 @@ RSYNC_RSH="$(printf "%s" "$RSYNC_RSH" | sed -E 's/(^| )-t( |$)/ /g; s/  +/ /g; s
     #   --include: preserve placeholder directories that only contain .gitignore
     #   --filter: merge per-directory .gitignore files as rsync excludes
     #   --exclude: never copy Git repository metadata to the VM
-    #   --rsync-path: create ~/context-scythe before remote rsync starts
+    #   --rsync-path: create ~/amber before remote rsync starts
     #   -e: use gcloud's generated SSH command for auth and routing
     #
     # rsync's .gitignore support is exclude-oriented, so Git-style negation

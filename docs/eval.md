@@ -26,7 +26,7 @@ python -m sglang.launch_server \
   --served-model-name $CHECKPOINT_NAME \
   --host 0.0.0.0 --port 30000 \
   --trust-remote-code \
-  --chat-template ~/workdir/context-scythe/packages/train/model_utils/qwen3.5_custom.jinja \
+  --chat-template ~/workdir/amber/packages/train/model_utils/qwen3.5_custom.jinja \
   --mem-fraction-static 0.7 \
   --chunked-prefill-size 4096 \
   --max-running-requests 4 \

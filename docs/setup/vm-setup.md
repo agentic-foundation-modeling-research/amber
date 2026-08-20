@@ -25,7 +25,7 @@ On both VMs:
 
 - Ubuntu with `apt`, `sudo`, and outbound internet access.
 - SSH access for your user.
-- This repository present at `~/context-scythe`. Copy it with `rsync`/`scp` from
+- This repository present at `~/amber`. Copy it with `rsync`/`scp` from
   your laptop, or clone it on the VM. On GCP, use
   `bash vm_utils/sync_vm.sh <instance>`.
 
@@ -45,7 +45,7 @@ On the `Websites VM` only:
 
 On the `env_server VM` only:
 
-- A `.env` file at `~/context-scythe/.env` providing `OPENAI_BASE_URL` and
+- A `.env` file at `~/amber/.env` providing `OPENAI_BASE_URL` and
   `OPENAI_API_KEY`.
 - `~/.config/uv/uv.toml`, if your `uv` index requires a token. Ray actors use
   `uv` to build their execution environments and will fail to start without the
@@ -63,7 +63,7 @@ On the `env_server VM` only:
 Run on the `Websites VM`:
 
 ```sh
-cd ~/context-scythe
+cd ~/amber
 bash vm_utils/install_website_server_requirements.sh
 ```
 
@@ -110,7 +110,7 @@ runs it here and the `env_server VM` runs the same script in
 Run on the `Websites VM`:
 
 ```sh
-cd ~/context-scythe
+cd ~/amber
 screen -S setup
 bash environment_setup/webarena/setup.sh
 ```
@@ -131,7 +131,7 @@ Wikipedia environments from local archives. Then continue with
 Run on the `env_server VM`:
 
 ```sh
-cd ~/context-scythe
+cd ~/amber
 bash vm_utils/setup_env_server.sh
 source "$HOME/.local/bin/env"
 ```
@@ -147,7 +147,7 @@ if you do not want to reconnect through a new shell to pick up `uv` on your
 Run on the `Websites VM`:
 
 ```sh
-cd ~/context-scythe
+cd ~/amber
 bash environment_setup/webarena/rollout_env/start_rollout_servers.sh
 ```
 
@@ -156,12 +156,12 @@ This starts the setup service on port `7565` and the homepage service on port
 
 ## 5. Start the env_server Service
 
-Confirm `~/context-scythe/.env` and, if your index needs it,
+Confirm `~/amber/.env` and, if your index needs it,
 `~/.config/uv/uv.toml` are in place on the `env_server VM` (see
 [Prerequisites](#prerequisites)), then run on the `env_server VM`:
 
 ```sh
-cd ~/context-scythe
+cd ~/amber
 bash environment_setup/environment_server/manage-env-server.sh start
 ```
 
@@ -195,7 +195,7 @@ The setup is ready when:
 
 - The setup service health check returns `{"ok":true}`.
 - The env_server health check returns `{"status":"ok", ...}`.
-- Both VMs have the repository at `~/context-scythe`.
+- Both VMs have the repository at `~/amber`.
 
 ## Adding More `Websites VM` Instances
 

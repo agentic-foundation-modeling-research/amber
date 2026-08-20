@@ -155,7 +155,7 @@ bash vm_utils/sync_vm.sh "$WEBSITES_VM"
 bash vm_utils/sync_vm.sh "$ENV_SERVER_VM"
 ```
 
-This rsyncs the repository to `~/context-scythe` on both VMs, over an IAP tunnel
+This rsyncs the repository to `~/amber` on both VMs, over an IAP tunnel
 unless `GCP_USE_IAP=false`.
 
 The `env_server VM` also needs the `.env` file itself, which supplies
