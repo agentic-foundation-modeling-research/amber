@@ -1,12 +1,12 @@
 # BrowserGym and WebArena Task Model
 
-This guide explains how Context Scythe turns a WebArena task config into a
+This guide explains how Amber turns a WebArena task config into a
 BrowserGym environment. It is a conceptual map for reading the code; for VM
 setup, service operations, and teardown, use the linked operational docs.
 
 ## Mental Model
 
-Context Scythe keeps four concerns separate:
+Amber keeps four concerns separate:
 
 | Layer | Main code | Responsibility |
 | --- | --- | --- |

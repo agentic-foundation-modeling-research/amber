@@ -79,7 +79,7 @@ start_server() {
     fi
 
     echo "Starting env_server on port $PORT"
-    nohup uv run --no-sync context-scythe-env-server --port "$PORT" > "$LOG_FILE" 2>&1 &
+    nohup uv run --no-sync amber-env-server --port "$PORT" > "$LOG_FILE" 2>&1 &
     echo $! > "$PID_FILE"
 
     sleep 2

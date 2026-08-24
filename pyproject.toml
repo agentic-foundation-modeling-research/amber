@@ -3,29 +3,29 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "context-scythe"
+name = "amber"
 version = "0.1.0"
 description = "RL training infrastructure for web agents"
-authors = [{ name = "Context Scythe contributors" }]
+authors = [{ name = "Amber contributors" }]
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
 requires-python = ">=3.12"
 dependencies = [
-    "context-scythe-core==0.1.0",
-    "context-scythe-env-server==0.1.0",
+    "amber-core==0.1.0",
+    "amber-env-server==0.1.0",
 ]
 
 [project.urls]
-Homepage = "https://github.com/agentic-foundation-modeling-research/context-scythe"
-Documentation = "https://github.com/agentic-foundation-modeling-research/context-scythe/tree/main/docs"
-Repository = "https://github.com/agentic-foundation-modeling-research/context-scythe"
-Issues = "https://github.com/agentic-foundation-modeling-research/context-scythe/issues"
+Homepage = "https://github.com/agentic-foundation-modeling-research/amber"
+Documentation = "https://github.com/agentic-foundation-modeling-research/amber/tree/main/docs"
+Repository = "https://github.com/agentic-foundation-modeling-research/amber"
+Issues = "https://github.com/agentic-foundation-modeling-research/amber/issues"
 
 [project.optional-dependencies]
 dev = [
-    "context-scythe-core[dev]==0.1.0",
-    "context-scythe-env-server[dev]==0.1.0",
+    "amber-core[dev]==0.1.0",
+    "amber-env-server[dev]==0.1.0",
 ]
 
 [tool.setuptools]
@@ -41,5 +41,5 @@ members = [
 ]
 
 [tool.uv.sources]
-context-scythe-core = { workspace = true }
-context-scythe-env-server = { workspace = true }
+amber-core = { workspace = true }
+amber-env-server = { workspace = true }

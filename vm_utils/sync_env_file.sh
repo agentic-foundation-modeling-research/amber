@@ -24,7 +24,7 @@ fi
 : "${GCP_ZONE:=us-central1-f}"
 : "${GCP_USE_IAP:=true}"
 
-DEST_DIR="~/context-scythe"
+DEST_DIR="~/amber"
 
 usage() {
     echo "Usage: $0 <vm-instance-name>"
@@ -59,7 +59,7 @@ GCLOUD_INSTANCE_ARGS=(
 )
 
 echo "Creating ${INSTANCE_NAME}:${DEST_DIR}"
-gcloud compute ssh "${GCLOUD_INSTANCE_ARGS[@]}" --command="mkdir -p ~/context-scythe"
+gcloud compute ssh "${GCLOUD_INSTANCE_ARGS[@]}" --command="mkdir -p ~/amber"
 
 echo "Copying $SOURCE_FILE to ${INSTANCE_NAME}:${DEST_DIR}/.env"
 gcloud compute scp \

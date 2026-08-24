@@ -32,8 +32,8 @@ source, not a baseline for any one method.
 ## Repository map
 
 ```text
-packages/core/       context-scythe-core: agents, prompt builders, trajectory utils, env helpers, datagen
-packages/env_server/ context-scythe-env-server: FastAPI/Ray server hosting BrowserGym sessions
+packages/core/       amber-core: agents, prompt builders, trajectory utils, env helpers, datagen
+packages/env_server/ amber-env-server: FastAPI/Ray server hosting BrowserGym sessions
 packages/train/      Miles rollout functions (sft_generate, generate_webarena, ...), training_configs/,
                      and tests/ for rollout and reward post-processing
 scripts/             Entry points: rollout examples, run_webarena_*.sh (SFT/RL)

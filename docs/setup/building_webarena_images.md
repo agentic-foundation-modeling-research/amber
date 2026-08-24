@@ -21,7 +21,7 @@ and place them in [../../environment_setup/webarena/archive](../../environment_s
 
 Then, run
 ```sh
-cd ~/context-scythe
+cd ~/amber
 bash environment_setup/webarena/build_images.sh
 ```
 
@@ -38,7 +38,7 @@ Ensure that the artifacts required for the Wikipedia environment `wikipedia_en_a
 
 Then, run
 ```sh
-cd ~/context-scythe
+cd ~/amber
 bash environment_setup/webarena/maps/setup.sh
 bash environment_setup/webarena/wikipedia/setup.sh
 ```

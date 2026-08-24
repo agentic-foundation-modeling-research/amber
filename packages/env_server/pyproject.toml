@@ -3,16 +3,16 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "context-scythe-env-server"
+name = "amber-env-server"
 version = "0.1.0"
-description = "Context Scythe rollout environment server"
-authors = [{ name = "Context Scythe contributors" }]
+description = "Amber rollout environment server"
+authors = [{ name = "Amber contributors" }]
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.12"
 dependencies = [
     "browsergym-core==0.14.3",
-    "context-scythe-core==0.1.0",
+    "amber-core==0.1.0",
     "fastapi>=0.138.1,<1.0.0",
     "jinja2>=3.1.6,<4.0.0",
     "pydantic>=2.13.4,<3.0.0",
@@ -21,10 +21,10 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/agentic-foundation-modeling-research/context-scythe"
-Documentation = "https://github.com/agentic-foundation-modeling-research/context-scythe/tree/main/docs"
-Repository = "https://github.com/agentic-foundation-modeling-research/context-scythe"
-Issues = "https://github.com/agentic-foundation-modeling-research/context-scythe/issues"
+Homepage = "https://github.com/agentic-foundation-modeling-research/amber"
+Documentation = "https://github.com/agentic-foundation-modeling-research/amber/tree/main/docs"
+Repository = "https://github.com/agentic-foundation-modeling-research/amber"
+Issues = "https://github.com/agentic-foundation-modeling-research/amber/issues"
 
 [project.optional-dependencies]
 dev = [
@@ -32,7 +32,7 @@ dev = [
 ]
 
 [project.scripts]
-context-scythe-env-server = "context_scythe.env_server.app:main"
+amber-env-server = "context_scythe.env_server.app:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/context_scythe"]

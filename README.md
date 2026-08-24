@@ -49,19 +49,19 @@ parse error that gives no hint that LFS is the cause.
 - Go through the [docs](docs/README.md)
 
 ## Package Layout
-This repository is split into three Python distributions. The package and import names retain the original `context-scythe` identifiers:
+This repository is split into three Python distributions:
 
-- `context-scythe`: a top-level meta package with no Python modules. Installing it installs both runtime packages.
-- `context-scythe-core`: the core package under `packages/core`, containing agents, trajectory utilities, WebArena environment helpers, training helpers, and templates.
-- `context-scythe-env-server`: the rollout environment server under `packages/env_server`, containing the FastAPI/Ray server and CLI entrypoint.
+- `amber`: a top-level meta package with no Python modules. Installing it installs both runtime packages.
+- `amber-core`: the core package under `packages/core`, containing agents, trajectory utilities, WebArena environment helpers, training helpers, and templates.
+- `amber-env-server`: the rollout environment server under `packages/env_server`, containing the FastAPI/Ray server and CLI entrypoint.
 
-Both runtime packages contribute modules under the shared `context_scythe` import namespace:
+Both runtime packages retain the shared `context_scythe` import namespace for compatibility:
 
 ```text
-context_scythe.agents        # context-scythe-core (includes trajectory_data and prompt_builders)
-context_scythe.datagen       # context-scythe-core
-context_scythe.environment   # context-scythe-core
-context_scythe.env_server    # context-scythe-env-server
+context_scythe.agents        # amber-core (includes trajectory_data and prompt_builders)
+context_scythe.datagen       # amber-core
+context_scythe.environment   # amber-core
+context_scythe.env_server    # amber-env-server
 ```
 
 ## Local Setup
@@ -88,14 +88,14 @@ uv run playwright install chromium
 For core-only development:
 
 ```sh
-uv sync --package context-scythe-core [--extra dev]
+uv sync --package amber-core [--extra dev]
 uv run playwright install chromium
 ```
 
 For env-server development:
 
 ```sh
-uv sync --package context-scythe-env-server [--extra dev]
+uv sync --package amber-env-server [--extra dev]
 uv run playwright install chromium
 ```
 

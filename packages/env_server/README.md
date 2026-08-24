@@ -1,5 +1,5 @@
-# Context Scythe Environment Server
+# Amber Environment Server
 
-FastAPI and Ray rollout environment server for [Context Scythe](https://github.com/agentic-foundation-modeling-research/context-scythe).
+FastAPI and Ray rollout environment server for [Amber](https://github.com/agentic-foundation-modeling-research/amber).
 
-See the [main repository](https://github.com/agentic-foundation-modeling-research/context-scythe#readme) for installation, usage, and contribution documentation.
+See the [main repository](https://github.com/agentic-foundation-modeling-research/amber#readme) for installation, usage, and contribution documentation.

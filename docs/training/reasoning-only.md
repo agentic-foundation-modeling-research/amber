@@ -42,7 +42,7 @@ format; see [data_preparation.md](../data_preparation.md).
 
 SSH into the cluster and train the SFT model
 ```sh
-cd ~/workdir/context-scythe
+cd ~/workdir/amber
 tmux new -s train
 
 # ----- CUSTOM VARIABLES ------
@@ -59,7 +59,7 @@ export MILES_SCRIPT_CUSTOM_CONFIG_PATH="packages/train/training_configs/sft/reas
 # Logging
 export MILES_SCRIPT_RUN_NAME=$CHECKPOINT_NAME
 export MILES_SCRIPT_WANDB_TEAM=<WANDB_TEAM>
-export MILES_SCRIPT_WANDB_PROJECT="context-scythe-webarena"
+export MILES_SCRIPT_WANDB_PROJECT="amber-webarena"
 
 # ----
 
@@ -87,7 +87,7 @@ Ensure that IP addresses for the environment server and website servers are set 
 correct values.
 
 ```sh
-cd ~/workdir/context-scythe
+cd ~/workdir/amber
 tmux new -s train
 
 STORAGE_ROOT=/mnt/shared-storage # Your shared filesystem mount
@@ -102,7 +102,7 @@ export MILES_SCRIPT_CUSTOM_CONFIG_PATH="packages/train/training_configs/rl/reaso
 # Logging
 export MILES_SCRIPT_RUN_NAME=$CHECKPOINT_NAME
 export MILES_SCRIPT_WANDB_TEAM=<WANDB_TEAM>
-export MILES_SCRIPT_WANDB_PROJECT="context-scythe-webarena"
+export MILES_SCRIPT_WANDB_PROJECT="amber-webarena"
 
 # Run the training script. This will save the checkpoints to $MILES_SCRIPT_OUTPUT_DIR
 bash scripts/run_webarena_qwen3.5-9b.sh

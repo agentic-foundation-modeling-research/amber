@@ -42,14 +42,14 @@ Expected responses:
 On the `Websites VM`:
 
 ```text
-~/context-scythe/environment_setup/webarena/rollout_env/setup_server.log
-~/context-scythe/environment_setup/webarena/rollout_env/homepage.log
+~/amber/environment_setup/webarena/rollout_env/setup_server.log
+~/amber/environment_setup/webarena/rollout_env/homepage.log
 ```
 
 On the `env_server VM`:
 
 ```text
-~/context-scythe/environment_setup/environment_server/env_server.log
+~/amber/environment_setup/environment_server/env_server.log
 ```
 
 ## Check Reachability from env_server
@@ -94,7 +94,7 @@ If the evaluation or training fails, we need to reset the env_server and setup s
 
 On the websites VM
 ```sh
-cd ~/context-scythe
+cd ~/amber
 
 # Remove dangling containers that missed teardown in the failed run
 docker rm -f $(docker ps -aq)

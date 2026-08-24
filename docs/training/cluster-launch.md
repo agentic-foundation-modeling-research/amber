@@ -57,7 +57,7 @@ environment. Training imports `context_scythe` — rollout functions are referen
 dotted path from the training configs — and the image does not ship it:
 
 ```sh
-cd /path/to/context-scythe
+cd /path/to/amber
 python -m pip install -e ./packages/core/
 ```
 
